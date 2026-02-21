@@ -1,0 +1,24 @@
+{
+  "name": "CSE307 OCaml Development",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/opam/workspace,type=bind",
+  "workspaceFolder": "/home/opam/workspace",
+  "remoteUser": "opam",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ocamllabs.ocaml-platform"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "ocaml.sandbox": {
+          "kind": "opam",
+          "switch": "default"
+        }
+      }
+    }
+  },
+  "postStartCommand": "eval $(opam env)"
+}
